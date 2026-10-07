@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="297mm" height="210mm" viewBox="0 0 500 353.53535" font-family="Sarabun, 'Leelawadee UI', sans-serif" fill="#283d48" role="img" aria-labelledby="plan-title plan-description" data-units="metres" data-metres-per-unit="1">
+  <title id="plan-title">ผังคลังคัดแยกสินค้า J&amp;T AYA ลาดหลุมแก้ว (2 อาคาร)</title>
+  <desc id="plan-description">ผังวัดตามขอบหลังคาจากภาพ Google Maps สเกล 50 เมตรเท่ากับ 141 พิกเซล หมุนภาพทวนเข็มนาฬิกา 9.78 องศาและปรับแนวฉากร่วมกัน หนึ่งหน่วยเท่ากับหนึ่งเมตร อาคาร 1 รูปตัว L อาคาร 2 รูปสี่เหลี่ยม ขอบลานเป็นแนวประมาณ แถบเฉียงบอกบริเวณที่เห็นรถหรือกรง ไม่ใช่การยืนยันประตูโหลดหรือช่องจอด</desc>
+  <metadata id="measurement-reference">{"source": {"file": "Screenshot 2026-10-07 140434.png", "width_px": 1920, "height_px": 1020, "north_up": true, "source": "User-provided Google Maps satellite screenshot"}, "scale": {"label": "50 ม.", "metres": 50, "vertical_tick_left_pixels": [1750, 1751], "vertical_tick_right_pixels": [1891, 1892], "endpoints_px": [[1750.5, 1015.5], [1891.5, 1015.5]], "length_px": 141.0, "metres_per_pixel": 0.3546099290780142, "method": "Centre-to-centre of two 2-pixel-wide white vertical ticks; horizontal bar at y=1015..1016."}, "frame": {"units": "metres", "x": "right", "y": "down", "common_roof_edge_angle_clockwise_from_image_x_deg": 9.779999999999013, "image_to_plan_rotation_deg": -9.779999999999013, "translation_metres": [-179.71099839679837, 21.564808585242616], "transform": "plan_x = mpp*(cos(a)*px + sin(a)*py) + tx; plan_y = mpp*(-sin(a)*px + cos(a)*py) + ty", "true_north_unit_vector": [-0.16986551655717141, -0.9854672527713771], "orthogonal_fit_method": "Shared angle least squares; parallel roof sides averaged onto constant x/y lines.", "fit_rms_px": 0.7706663039022621, "fit_rms_m": 0.2732859233695965}, "measurement_file": "_map/measurements.json", "overlay_file": "_map/overlay_check.png", "wall_names": "Cardinal names are approximate outward-facing directions. Inner L walls face east and north."}</metadata>
+  <defs>
+    <pattern id="park-hatch" width="2.3" height="2.3" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+      <rect width="2.3" height="2.3" fill="#fbf5e8" />
+      <line x1="0" y1="0" x2="0" y2="2.3" stroke="#c6a66e" stroke-width="0.6" />
+    </pattern>
+    <clipPath id="map-clip">
+      <rect x="13" y="47" width="474" height="244" />
+    </clipPath>
+  </defs>
+  <rect id="paper" x="0" y="0" width="500" height="353.53535" fill="white" />
+  <g id="context" clip-path="url(#map-clip)">
+    <polygon id="highway-ah2" points="411.40862,16.82984 405.50155,76.50186 398.05269,120.96655 384.56653,170.07029 368.34495,220.00537 348.77319,275.55568 419.01394,263.44824 439.98352,207.65699 457.25347,157.54120 471.43855,108.31699 482.38197,63.24994 492.13306,2.91532" fill="#f0f1f2" stroke="#d8dce0" stroke-width="0.35" />
+    <polyline points="451.77084,9.87258 443.94176,69.87590 434.74562,114.64177 420.91000,163.80575 404.16424,213.83118 383.89357,269.50196" fill="none" stroke="white" stroke-width="0.5" stroke-dasharray="4 4" />
+    <text x="428" y="150" font-size="5.4" text-anchor="middle" transform="rotate(-73 428 150)" fill="#88949b">ถนนใหญ่ (AH2)</text>
+  </g>
+  <g id="yard">
+    <polygon id="paved-yard" points="27.50166,56.73581 133.55484,58.24653 252.94761,57.81774 396.01882,59.06492 391.25798,83.63495 384.11031,129.84692 375.76988,171.22673 356.80136,209.40077 342.37578,246.79173 333.54194,272.78350 283.52182,272.76935 28.33620,270.33655" fill="#f5f5f3" stroke="#aeb7b8" stroke-width="0.4" stroke-dasharray="2 1.4" />
+  </g>
+  <g id="buildings">
+    <polygon id="b1-footprint" points="45.00000,74.00000 123.26651,74.00000 123.26651,211.22607 289.47630,211.22607 289.47630,253.00828 45.00000,253.00828" fill="#e9eef2" />
+    <polygon id="b2-footprint" points="165.39439,84.34676 370.72267,84.34676 370.72267,172.17417 165.39439,172.17417" fill="#e6eef0" />
+  </g>
+  <g id="walls" fill="none" stroke="#536d7b" stroke-width="0.65" stroke-linecap="square">
+    <line x1="45.0" y1="74.0" x2="123.26651" y2="74.0" id="b1-north" data-length-m="78.26651">
+      <title>b1-north — ด้านเหนือ — 78.3 ม.</title>
+    </line>
+    <line x1="123.26651" y1="74.0" x2="123.26651" y2="211.22607" id="b1-inner-east" data-length-m="137.22607">
+      <title>b1-inner-east — ด้านตะวันออก — 137.2 ม.</title>
+    </line>
+    <line x1="123.26651" y1="211.22607" x2="289.4763" y2="211.22607" id="b1-inner-north" data-length-m="166.20979">
+      <title>b1-inner-north — ด้านเหนือ — 166.2 ม.</title>
+    </line>
+    <line x1="289.4763" y1="211.22607" x2="289.4763" y2="253.00828" id="b1-east" data-length-m="41.78221">
+      <title>b1-east — ด้านตะวันออก — 41.8 ม.</title>
+    </line>
+    <line x1="289.4763" y1="253.00828" x2="45.0" y2="253.00828" id="b1-south" data-length-m="244.47630">
+      <title>b1-south — ด้านใต้ — 244.5 ม.</title>
+    </line>
+    <line x1="45.0" y1="253.00828" x2="45.0" y2="74.0" id="b1-west" data-length-m="179.00828">
+      <title>b1-west — ด้านตะวันตก — 179.0 ม.</title>
+    </line>
+    <line x1="165.39439" y1="84.34676" x2="370.72267" y2="84.34676" id="b2-north" data-length-m="205.32828">
+      <title>b2-north — ด้านเหนือ — 205.3 ม.</title>
+    </line>
+    <line x1="370.72267" y1="84.34676" x2="370.72267" y2="172.17417" id="b2-east" data-length-m="87.82741">
+      <title>b2-east — ด้านตะวันออก — 87.8 ม.</title>
+    </line>
+    <line x1="370.72267" y1="172.17417" x2="165.39439" y2="172.17417" id="b2-south" data-length-m="205.32828">
+      <title>b2-south — ด้านใต้ — 205.3 ม.</title>
+    </line>
+    <line x1="165.39439" y1="172.17417" x2="165.39439" y2="84.34676" id="b2-west" data-length-m="87.82741">
+      <title>b2-west — ด้านตะวันตก — 87.8 ม.</title>
+    </line>
+  </g>
+  <g id="truck-bands">
+    <polygon id="b1-inner-north-parking-e" points="266.79882,211.22607 286.21159,211.22607 286.21159,207.82607 266.79882,207.82607" fill="url(#park-hatch)" stroke="#c6ad81" stroke-width="0.2" data-wall="b1-inner-north">
+      <title>เห็นรถจอดชิดอาคาร: trucks/trailers; clear. แถบเป็นสัญลักษณ์ ไม่ใช่ความลึกที่วัดได้</title>
+    </polygon>
+    <polygon id="b2-north-parking" points="178.64537,84.34676 360.13244,84.34676 360.13244,80.94676 178.64537,80.94676" fill="url(#park-hatch)" stroke="#c6ad81" stroke-width="0.2" data-wall="b2-north">
+      <title>เห็นรถจอดชิดอาคาร: cages/trailers; individual vehicles not all resolvable; clear objects, mixed type. แถบเป็นสัญลักษณ์ ไม่ใช่ความลึกที่วัดได้</title>
+    </polygon>
+    <polygon id="b2-west-parking" points="165.39439,122.54740 165.39439,166.44605 161.99439,166.44605 161.99439,122.54740" fill="url(#park-hatch)" stroke="#c6ad81" stroke-width="0.2" data-wall="b2-west">
+      <title>เห็นรถจอดชิดอาคาร: truck/trailer clusters; moderate; partly in shadow. แถบเป็นสัญลักษณ์ ไม่ใช่ความลึกที่วัดได้</title>
+    </polygon>
+  </g>
+  <g id="labels">
+    <text x="14" y="18" font-size="7.7" text-anchor="start" font-weight="600">ผังคลังคัดแยกสินค้า J&amp;T AYA ลาดหลุมแก้ว (2 อาคาร)</text>
+    <text x="14" y="29" font-size="4.1" text-anchor="start" fill="#677b85">แผนฐานสำหรับเติมช่องจอด  •  ขนาดประมาณจากภาพดาวเทียม  •  SVG 1 หน่วย = 1 เมตร</text>
+    <line x1="14" y1="37" x2="432" y2="37" stroke="#d8e0e3" stroke-width="0.35" />
+    <g id="true-north-arrow" transform="translate(465 36)">
+      <line x1="0" y1="0" x2="-2.887713781471914" y2="-16.75294329711341" stroke="#304c5c" stroke-width="0.7" />
+      <polygon points="-2.88771,-16.75294 0.10241,-11.17987 -3.83946,-10.50041" fill="#304c5c" />
+    </g>
+    <text x="462" y="12" font-size="4.3" text-anchor="middle">เหนือจริง</text>
+    <text x="465" y="44" font-size="3.8" text-anchor="middle" fill="#677b85">N</text>
+    <text x="84.13" y="145" font-size="6" text-anchor="middle" id="building-1-label" font-weight="600">อาคาร 1 (J&amp;T Gw)</text>
+    <text x="84.13" y="155" font-size="4.5" text-anchor="middle" fill="#617986">อาคารรูปตัว L</text>
+    <text x="84.13" y="165" font-size="4.2" text-anchor="middle" fill="#617986">ปีกตะวันตก</text>
+    <text x="206" y="236" font-size="4.7" text-anchor="middle" fill="#617986">ปีกใต้ ลึก ≈ 42 ม.</text>
+    <text x="268.06" y="126" font-size="7.3" text-anchor="middle" id="building-2-label" font-weight="600">อาคาร 2</text>
+    <text x="268.06" y="138" font-size="4.7" text-anchor="middle" fill="#617986">ประมาณ 205 × 88 ม.</text>
+    <text x="211" y="201" font-size="4.9" text-anchor="middle" fill="#939c9e">ลานกลาง / ทางวิ่งรถ</text>
+    <text x="84.13" y="82" font-size="4.3" text-anchor="middle" id="b1-north-label" fill="#657b86">ด้านเหนือ</text>
+    <text x="116.3" y="138" font-size="4.3" text-anchor="middle" id="b1-inner-east-label" fill="#657b86" transform="rotate(-90 116.3 138)">ด้านตะวันออก (ผนังใน)</text>
+    <text x="206" y="219.5" font-size="4.3" text-anchor="middle" id="b1-inner-north-label" fill="#657b86">ด้านเหนือ (ผนังใน)</text>
+    <text x="282.5" y="232" font-size="4.3" text-anchor="middle" id="b1-east-label" fill="#657b86" transform="rotate(-90 282.5 232)">ด้านตะวันออก</text>
+    <text x="167.2" y="247" font-size="4.3" text-anchor="middle" id="b1-south-label" fill="#657b86">ด้านใต้</text>
+    <text x="52" y="163" font-size="4.3" text-anchor="middle" id="b1-west-label" fill="#657b86" transform="rotate(-90 52 163)">ด้านตะวันตก</text>
+    <text x="268" y="92.5" font-size="4.3" text-anchor="middle" id="b2-north-label" fill="#657b86">ด้านเหนือ</text>
+    <text x="363.7" y="128" font-size="4.3" text-anchor="middle" id="b2-east-label" fill="#657b86" transform="rotate(-90 363.7 128)">ด้านตะวันออก</text>
+    <text x="268" y="166" font-size="4.3" text-anchor="middle" id="b2-south-label" fill="#657b86">ด้านใต้</text>
+    <text x="173" y="128" font-size="4.3" text-anchor="middle" id="b2-west-label" fill="#657b86" transform="rotate(-90 173 128)">ด้านตะวันตก</text>
+    <text x="271" y="76" font-size="4.3" text-anchor="middle" fill="#8b6c36" id="b2-north-parking-label">เห็นรถจอดชิดอาคาร</text>
+    <text x="153" y="146" font-size="4.3" text-anchor="middle" fill="#8b6c36" transform="rotate(-90 153 146)" id="b2-west-parking-label">เห็นรถจอดชิดอาคาร</text>
+    <text x="290" y="202" font-size="4.3" text-anchor="middle" fill="#8b6c36" id="b1-inner-north-parking-label">เห็นรถจอดชิดอาคาร</text>
+    <g id="google-pin">
+      <circle cx="351.59539" cy="216.77523" r="2.5" fill="white" stroke="#668493" stroke-width="0.7" />
+      <circle cx="351.59539" cy="216.77523" r="0.8" fill="#668493" />
+      <polyline points="351.59539,216.77523 340.00000,232.00000 319.00000,232.00000" fill="none" stroke="#8ca0a9" stroke-width="0.35" />
+      <text x="319" y="240" font-size="3.8" text-anchor="middle">ศูนย์คัดแยกสินค้า</text>
+      <text x="319" y="246" font-size="3.8" text-anchor="middle">J&amp;T Express AYA</text>
+      <text x="319" y="252" font-size="3.6" text-anchor="middle" fill="#788c96">(หมุด Google)</text>
+    </g>
+    <g id="dimensions" fill="#74838c" stroke="#9ba9af" stroke-width="0.25">
+      <line x1="45" y1="66" x2="123.26651" y2="66" />
+      <line x1="43.7" y1="67.3" x2="46.3" y2="64.7" />
+      <line x1="121.96651" y1="67.3" x2="124.56651" y2="64.7" />
+      <text x="84.13325499999999" y="64" font-size="4.3" text-anchor="middle" stroke="none">≈ 78 ม.</text>
+      <line x1="17" y1="74" x2="17" y2="253.00828" />
+      <line x1="15.7" y1="75.3" x2="18.3" y2="72.7" />
+      <line x1="15.7" y1="254.30828000000002" x2="18.3" y2="251.70828" />
+      <text x="15" y="163.50414" font-size="4.3" text-anchor="middle" transform="rotate(-90 15 163.50414)" stroke="none">≈ 179 ม.</text>
+      <line x1="19" y1="74" x2="41" y2="74" />
+      <line x1="19" y1="253.00828" x2="41" y2="253.00828" />
+      <line x1="45" y1="285" x2="289.4763" y2="285" />
+      <line x1="43.7" y1="286.3" x2="46.3" y2="283.7" />
+      <line x1="288.17629999999997" y1="286.3" x2="290.7763" y2="283.7" />
+      <text x="167.23815" y="283" font-size="4.3" text-anchor="middle" stroke="none">ขนาดรวม ≈ 244 ม.</text>
+      <line x1="45" y1="274.5" x2="45" y2="287" />
+      <line x1="289.4763" y1="274.5" x2="289.4763" y2="287" />
+      <line x1="165.39439" y1="65.5" x2="370.72267" y2="65.5" />
+      <line x1="164.09438999999998" y1="66.8" x2="166.69439" y2="64.2" />
+      <line x1="369.42267" y1="66.8" x2="372.02267" y2="64.2" />
+      <text x="268.05853" y="63.5" font-size="4.3" text-anchor="middle" stroke="none">≈ 205 ม.</text>
+      <line x1="387" y1="84.34676" x2="387" y2="172.17417" />
+      <line x1="385.7" y1="85.64676" x2="388.3" y2="83.04676" />
+      <line x1="385.7" y1="173.47417000000002" x2="388.3" y2="170.87417" />
+      <text x="385" y="128.260465" font-size="4.3" text-anchor="middle" transform="rotate(-90 385 128.260465)" stroke="none">≈ 88 ม.</text>
+      <line x1="376" y1="84.34676" x2="389" y2="84.34676" />
+      <line x1="376" y1="172.17417" x2="389" y2="172.17417" />
+    </g>
+    <line x1="14" y1="298" x2="486" y2="298" stroke="#d8e0e3" stroke-width="0.35" />
+    <rect x="14" y="307" width="9" height="5" fill="#e9eef2" stroke="#aeb7b8" stroke-width="0.3" />
+    <text x="27" y="311.4" font-size="4.1" text-anchor="start">แนวหลังคาอาคาร</text>
+    <rect x="108" y="307" width="9" height="5" fill="#f5f5f3" stroke="#aeb7b8" stroke-width="0.3" />
+    <text x="121" y="311.4" font-size="4.1" text-anchor="start">ลาน / ทางวิ่งรถ</text>
+    <rect x="200" y="307" width="9" height="5" fill="url(#park-hatch)" stroke="#aeb7b8" stroke-width="0.3" />
+    <text x="213" y="311.4" font-size="4.1" text-anchor="start">รถ / เทรลเลอร์ / กรงที่เห็นในภาพ</text>
+    <text x="14" y="323" font-size="3.9" text-anchor="start" fill="#8a795d">แถบเฉียงแสดงจุดที่เห็นจอดชิดอาคารบางช่วง ยังไม่ยืนยันตำแหน่งประตูโหลด</text>
+    <text x="14" y="334" font-size="3.8" text-anchor="start" fill="#7b8b92">อ้างอิง: ภาพ Google Maps ที่ให้มา • วัดตามขอบหลังคา ไม่ใช่แนวผนังสำรวจ</text>
+    <text x="14" y="343" font-size="3.8" text-anchor="start" fill="#7b8b92">ขอบลานเป็นแนวประมาณ • ช่องจอดวางเรียงเท่า ๆ กันตามลำดับ ตำแหน่งจริงอาจคลาดเล็กน้อย • ยังไม่ระบุคลังเก่า / คลังใหม่</text>
+    <g id="metric-scale">
+      <rect x="414" y="312" width="25" height="2.2" fill="#526c7b" stroke="#526c7b" stroke-width="0.3" />
+      <rect x="439" y="312" width="25" height="2.2" fill="white" stroke="#526c7b" stroke-width="0.3" />
+      <text x="414" y="309" font-size="3.9" text-anchor="middle">0</text>
+      <text x="439" y="309" font-size="3.9" text-anchor="middle">25</text>
+      <text x="464" y="309" font-size="3.9" text-anchor="middle">50 ม.</text>
+      <text x="439" y="324" font-size="3.6" text-anchor="middle" fill="#7b8b92">50 ม. = 141 พิกเซลต้นฉบับ</text>
+      <text x="439" y="333" font-size="3.6" text-anchor="middle" fill="#7b8b92">พิมพ์ A4 แนวนอน</text>
+    </g>
+  </g>
+  <g id="docks">
+  <g id="docks-b2-south" data-wall="b2-south" data-from="east">
+    <g id="dock-b2-south-01" data-number="63" data-color="yellow"><title>ช่อง 63 · สีเหลือง · อาคาร 2 ด้านใต้</title><polygon points="367.973,172.474 362.908,172.474 362.908,180.474 367.973,180.474" fill="#f6d443" stroke="#a8860f" stroke-width="0.3"/><text x="365.440" y="177.698" font-size="3.4" font-weight="700" text-anchor="middle" fill="#283d48">63</text></g>
+    <g id="dock-b2-south-02" data-number="64" data-color="yellow"><title>ช่อง 64 · สีเหลือง · อาคาร 2 ด้านใต้</title><polygon points="362.408,172.474 357.343,172.474 357.343,180.474 362.408,180.474" fill="#f6d443" stroke="#a8860f" stroke-width="0.3"/><text x="359.876" y="177.698" font-size="3.4" font-weight="700" text-anchor="middle" fill="#283d48">64</text></g>
+    <g id="dock-b2-south-03" data-number="65" data-color="yellow"><title>ช่อง 65 · สีเหลือง · อาคาร 2 ด้านใต้</title><polygon points="356.843,172.474 351.779,172.474 351.779,180.474 356.843,180.474" fill="#f6d443" stroke="#a8860f" stroke-width="0.3"/><text x="354.311" y="177.698" font-size="3.4" font-weight="700" text-anchor="middle" fill="#283d48">65</text></g>
+    <g id="dock-b2-south-04" data-number="66" data-color="yellow"><title>ช่อง 66 · สีเหลือง · อาคาร 2 ด้านใต้</title><polygon points="351.279,172.474 346.214,172.474 346.214,180.474 351.279,180.474" fill="#f6d443" stroke="#a8860f" stroke-width="0.3"/><text x="348.746" y="177.698" font-size="3.4" font-weight="700" text-anchor="middle" fill="#283d48">66</text></g>
+    <polyline points="367.973,181.074 367.973,182.074 346.214,182.074 346.214,181.074" fill="none" stroke="#a8860f" stroke-width="0.3"/>    <text x="357.093" y="186.274" font-size="3.4" text-anchor="middle" fill="#5b5030">เหลือง 63–66</text>
+    <g id="dock-b2-south-05" data-number="" data-color="yellow"><title>ว่าง · สีเหลือง · อาคาร 2 ด้านใต้</title><polygon points="345.714,172.474 340.649,172.474 340.649,180.474 345.714,180.474" fill="#f6d443" stroke="#a8860f" stroke-width="0.3"/><text x="343.182" y="177.266" font-size="2.2" font-weight="700" text-anchor="middle" fill="#283d48">ว่าง</text></g>
+    <g id="dock-b2-south-06" data-number="1" data-color="white"><title>ช่อง 1 · สีขาว · อาคาร 2 ด้านใต้</title><polygon points="340.149,172.474 335.085,172.474 335.085,180.474 340.149,180.474" fill="#ffffff" stroke="#6d8591" stroke-width="0.3"/><text x="337.617" y="177.698" font-size="3.4" font-weight="700" text-anchor="middle" fill="#283d48">1</text></g>
+    <g id="dock-b2-south-07" data-number="2" data-color="white"><title>ช่อง 2 · สีขาว · อาคาร 2 ด้านใต้</title><polygon points="334.585,172.474 329.520,172.474 329.520,180.474 334.585,180.474" fill="#ffffff" stroke="#6d8591" stroke-width="0.3"/><text x="332.052" y="177.698" font-size="3.4" font-weight="700" text-anchor="middle" fill="#283d48">2</text></g>
+    <g id="dock-b2-south-08" data-number="3" data-color="white"><title>ช่อง 3 · สีขาว · อาคาร 2 ด้านใต้</title><polygon points="329.020,172.474 323.955,172.474 323.955,180.474 329.020,180.474" fill="#ffffff" stroke="#6d8591" stroke-width="0.3"/><text x="326.488" y="177.698" font-size="3.4" font-weight="700" text-anchor="middle" fill="#283d48">3</text></g>
+    <g id="dock-b2-south-09" data-number="4" data-color="white"><title>ช่อง 4 · สีขาว · อาคาร 2 ด้านใต้</title><polygon points="323.455,172.474 318.391,172.474 318.391,180.474 323.455,180.474" fill="#ffffff" stroke="#6d8591" stroke-width="0.3"/><text x="320.923" y="177.698" font-size="3.4" font-weight="700" text-anchor="middle" fill="#283d48">4</text></g>
+    <g id="dock-b2-south-10" data-number="5" data-color="white"><title>ช่อง 5 · สีขาว · อาคาร 2 ด้านใต้</title><polygon points="317.891,172.474 312.826,172.474 312.826,180.474 317.891,180.474" fill="#ffffff" stroke="#6d8591" stroke-width="0.3"/><text x="315.358" y="177.698" font-size="3.4" font-weight="700" text-anchor="middle" fill="#283d48">5</text></g>
+    <g id="dock-b2-south-11" data-number="6" data-color="white"><title>ช่อง 6 · สีขาว · อาคาร 2 ด้านใต้</title><polygon points="312.326,172.474 307.261,172.474 307.261,180.474 312.326,180.474" fill="#ffffff" stroke="#6d8591" stroke-width="0.3"/><text x="309.794" y="177.698" font-size="3.4" font-weight="700" text-anchor="middle" fill="#283d48">6</text></g>
+    <g id="dock-b2-south-12" data-number="7" data-color="white"><title>ช่อง 7 · สีขาว · อาคาร 2 ด้านใต้</title><polygon points="306.761,172.474 301.697,172.474 301.697,180.474 306.761,180.474" fill="#ffffff" stroke="#6d8591" stroke-width="0.3"/><text x="304.229" y="177.698" font-size="3.4" font-weight="700" text-anchor="middle" fill="#283d48">7</text></g>
+    <g id="dock-b2-south-13" data-number="8" data-color="white"><title>ช่อง 8 · สีขาว · อาคาร 2 ด้านใต้</title><polygon points="301.197,172.474 296.132,172.474 296.132,180.474 301.197,180.474" fill="#ffffff" stroke="#6d8591" stroke-width="0.3"/><text x="298.664" y="177.698" font-size="3.4" font-weight="700" text-anchor="middle" fill="#283d48">8</text></g>
+    <g id="dock-b2-south-14" data-number="9" data-color="white"><title>ช่อง 9 · สีขาว · อาคาร 2 ด้านใต้</title><polygon points="295.632,172.474 290.567,172.474 290.567,180.474 295.632,180.474" fill="#ffffff" stroke="#6d8591" stroke-width="0.3"/><text x="293.100" y="177.698" font-size="3.4" font-weight="700" text-anchor="middle" fill="#283d48">9</text></g>
+    <g id="dock-b2-south-15" data-number="10" data-color="white"><title>ช่อง 10 · สีขาว · อาคาร 2 ด้านใต้</title><polygon points="290.067,172.474 285.003,172.474 285.003,180.474 290.067,180.474" fill="#ffffff" stroke="#6d8591" stroke-width="0.3"/><text x="287.535" y="177.698" font-size="3.4" font-weight="700" text-anchor="middle" fill="#283d48">10</text></g>
+    <g id="dock-b2-south-16" data-number="11" data-color="white"><title>ช่อง 11 · สีขาว · อาคาร 2 ด้านใต้</title><polygon points="284.503,172.474 279.438,172.474 279.438,180.474 284.503,180.474" fill="#ffffff" stroke="#6d8591" stroke-width="0.3"/><text x="281.970" y="177.698" font-size="3.4" font-weight="700" text-anchor="middle" fill="#283d48">11</text></g>
+    <g id="dock-b2-south-17" data-number="12" data-color="white"><title>ช่อง 12 · สีขาว · อาคาร 2 ด้านใต้</title><polygon points="278.938,172.474 273.873,172.474 273.873,180.474 278.938,180.474" fill="#ffffff" stroke="#6d8591" stroke-width="0.3"/><text x="276.406" y="177.698" font-size="3.4" font-weight="700" text-anchor="middle" fill="#283d48">12</text></g>
+    <g id="dock-b2-south-18" data-number="13" data-color="white"><title>ช่อง 13 · สีขาว · อาคาร 2 ด้านใต้</title><polygon points="273.373,172.474 268.309,172.474 268.309,180.474 273.373,180.474" fill="#ffffff" stroke="#6d8591" stroke-width="0.3"/><text x="270.841" y="177.698" font-size="3.4" font-weight="700" text-anchor="middle" fill="#283d48">13</text></g>
+    <g id="dock-b2-south-19" data-number="14" data-color="white"><title>ช่อง 14 · สีขาว · อาคาร 2 ด้านใต้</title><polygon points="267.809,172.474 262.744,172.474 262.744,180.474 267.809,180.474" fill="#ffffff" stroke="#6d8591" stroke-width="0.3"/><text x="265.276" y="177.698" font-size="3.4" font-weight="700" text-anchor="middle" fill="#283d48">14</text></g>
+    <g id="dock-b2-south-20" data-number="15" data-color="white"><title>ช่อง 15 · สีขาว · อาคาร 2 ด้านใต้</title><polygon points="262.244,172.474 257.179,172.474 257.179,180.474 262.244,180.474" fill="#ffffff" stroke="#6d8591" stroke-width="0.3"/><text x="259.712" y="177.698" font-size="3.4" font-weight="700" text-anchor="middle" fill="#283d48">15</text></g>
+    <g id="dock-b2-south-21" data-number="16" data-color="white"><title>ช่อง 16 · สีขาว · อาคาร 2 ด้านใต้</title><polygon points="256.679,172.474 251.615,172.474 251.615,180.474 256.679,180.474" fill="#ffffff" stroke="#6d8591" stroke-width="0.3"/><text x="254.147" y="177.698" font-size="3.4" font-weight="700" text-anchor="middle" fill="#283d48">16</text></g>
+    <g id="dock-b2-south-22" data-number="17" data-color="white"><title>ช่อง 17 · สีขาว · อาคาร 2 ด้านใต้</title><polygon points="251.115,172.474 246.050,172.474 246.050,180.474 251.115,180.474" fill="#ffffff" stroke="#6d8591" stroke-width="0.3"/><text x="248.582" y="177.698" font-size="3.4" font-weight="700" text-anchor="middle" fill="#283d48">17</text></g>
+    <g id="dock-b2-south-23" data-number="18" data-color="white"><title>ช่อง 18 · สีขาว · อาคาร 2 ด้านใต้</title><polygon points="245.550,172.474 240.485,172.474 240.485,180.474 245.550,180.474" fill="#ffffff" stroke="#6d8591" stroke-width="0.3"/><text x="243.017" y="177.698" font-size="3.4" font-weight="700" text-anchor="middle" fill="#283d48">18</text></g>
+    <g id="dock-b2-south-24" data-number="19" data-color="white"><title>ช่อง 19 · สีขาว · อาคาร 2 ด้านใต้</title><polygon points="239.985,172.474 234.920,172.474 234.920,180.474 239.985,180.474" fill="#ffffff" stroke="#6d8591" stroke-width="0.3"/><text x="237.453" y="177.698" font-size="3.4" font-weight="700" text-anchor="middle" fill="#283d48">19</text></g>
+    <g id="dock-b2-south-25" data-number="20" data-color="white"><title>ช่อง 20 · สีขาว · อาคาร 2 ด้านใต้</title><polygon points="234.420,172.474 229.356,172.474 229.356,180.474 234.420,180.474" fill="#ffffff" stroke="#6d8591" stroke-width="0.3"/><text x="231.888" y="177.698" font-size="3.4" font-weight="700" text-anchor="middle" fill="#283d48">20</text></g>
+    <g id="dock-b2-south-26" data-number="21" data-color="white"><title>ช่อง 21 · สีขาว · อาคาร 2 ด้านใต้</title><polygon points="228.856,172.474 223.791,172.474 223.791,180.474 228.856,180.474" fill="#ffffff" stroke="#6d8591" stroke-width="0.3"/><text x="226.323" y="177.698" font-size="3.4" font-weight="700" text-anchor="middle" fill="#283d48">21</text></g>
+    <g id="dock-b2-south-27" data-number="22" data-color="white"><title>ช่อง 22 · สีขาว · อาคาร 2 ด้านใต้</title><polygon points="223.291,172.474 218.226,172.474 218.226,180.474 223.291,180.474" fill="#ffffff" stroke="#6d8591" stroke-width="0.3"/><text x="220.759" y="177.698" font-size="3.4" font-weight="700" text-anchor="middle" fill="#283d48">22</text></g>
+    <g id="dock-b2-south-28" data-number="23" data-color="white"><title>ช่อง 23 · สีขาว · อาคาร 2 ด้านใต้</title><polygon points="217.726,172.474 212.662,172.474 212.662,180.474 217.726,180.474" fill="#ffffff" stroke="#6d8591" stroke-width="0.3"/><text x="215.194" y="177.698" font-size="3.4" font-weight="700" text-anchor="middle" fill="#283d48">23</text></g>
+    <g id="dock-b2-south-29" data-number="24" data-color="white"><title>ช่อง 24 · สีขาว · อาคาร 2 ด้านใต้</title><polygon points="212.162,172.474 207.097,172.474 207.097,180.474 212.162,180.474" fill="#ffffff" stroke="#6d8591" stroke-width="0.3"/><text x="209.629" y="177.698" font-size="3.4" font-weight="700" text-anchor="middle" fill="#283d48">24</text></g>
+    <g id="dock-b2-south-30" data-number="25" data-color="white"><title>ช่อง 25 · สีขาว · อาคาร 2 ด้านใต้</title><polygon points="206.597,172.474 201.532,172.474 201.532,180.474 206.597,180.474" fill="#ffffff" stroke="#6d8591" stroke-width="0.3"/><text x="204.065" y="177.698" font-size="3.4" font-weight="700" text-anchor="middle" fill="#283d48">25</text></g>
+    <g id="dock-b2-south-31" data-number="26" data-color="white"><title>ช่อง 26 · สีขาว · อาคาร 2 ด้านใต้</title><polygon points="201.032,172.474 195.968,172.474 195.968,180.474 201.032,180.474" fill="#ffffff" stroke="#6d8591" stroke-width="0.3"/><text x="198.500" y="177.698" font-size="3.4" font-weight="700" text-anchor="middle" fill="#283d48">26</text></g>
+    <polyline points="340.149,181.074 340.149,182.074 195.968,182.074 195.968,181.074" fill="none" stroke="#6d8591" stroke-width="0.3"/>    <text x="268.059" y="186.274" font-size="3.4" text-anchor="middle" fill="#5b5030">ขาว 1–26</text>
+    <g id="dock-b2-south-32" data-number="1" data-color="yellow"><title>ช่อง 1 · สีเหลือง · อาคาร 2 ด้านใต้</title><polygon points="195.468,172.474 190.403,172.474 190.403,180.474 195.468,180.474" fill="#f6d443" stroke="#a8860f" stroke-width="0.3"/><text x="192.935" y="177.698" font-size="3.4" font-weight="700" text-anchor="middle" fill="#283d48">1</text></g>
+    <g id="dock-b2-south-33" data-number="2" data-color="yellow"><title>ช่อง 2 · สีเหลือง · อาคาร 2 ด้านใต้</title><polygon points="189.903,172.474 184.838,172.474 184.838,180.474 189.903,180.474" fill="#f6d443" stroke="#a8860f" stroke-width="0.3"/><text x="187.371" y="177.698" font-size="3.4" font-weight="700" text-anchor="middle" fill="#283d48">2</text></g>
+    <g id="dock-b2-south-34" data-number="3" data-color="yellow"><title>ช่อง 3 · สีเหลือง · อาคาร 2 ด้านใต้</title><polygon points="184.338,172.474 179.274,172.474 179.274,180.474 184.338,180.474" fill="#f6d443" stroke="#a8860f" stroke-width="0.3"/><text x="181.806" y="177.698" font-size="3.4" font-weight="700" text-anchor="middle" fill="#283d48">3</text></g>
+    <g id="dock-b2-south-35" data-number="4" data-color="yellow"><title>ช่อง 4 · สีเหลือง · อาคาร 2 ด้านใต้</title><polygon points="178.774,172.474 173.709,172.474 173.709,180.474 178.774,180.474" fill="#f6d443" stroke="#a8860f" stroke-width="0.3"/><text x="176.241" y="177.698" font-size="3.4" font-weight="700" text-anchor="middle" fill="#283d48">4</text></g>
+    <g id="dock-b2-south-36" data-number="5" data-color="yellow"><title>ช่อง 5 · สีเหลือง · อาคาร 2 ด้านใต้</title><polygon points="173.209,172.474 168.144,172.474 168.144,180.474 173.209,180.474" fill="#f6d443" stroke="#a8860f" stroke-width="0.3"/><text x="170.677" y="177.698" font-size="3.4" font-weight="700" text-anchor="middle" fill="#283d48">5</text></g>
+    <polyline points="195.468,181.074 195.468,182.074 168.144,182.074 168.144,181.074" fill="none" stroke="#a8860f" stroke-width="0.3"/>    <text x="181.806" y="186.274" font-size="3.4" text-anchor="middle" fill="#5b5030">เหลือง 1–5</text>
+  </g>
+  <rect x="290" y="307" width="9" height="5" fill="#f6d443" stroke="#a8860f" stroke-width="0.3"/><text x="302" y="311.4" font-size="4.1">ช่องจอดสีเหลือง</text>
+  <rect x="348" y="307" width="9" height="5" fill="#ffffff" stroke="#6d8591" stroke-width="0.3"/><text x="360" y="311.4" font-size="4.1">ช่องจอดสีขาว</text>
+</g>
+</svg>

@@ -33,29 +33,30 @@ h1{margin:4px 0 2px;font-size:24px;line-height:1.3}
 <body>
 <div class="wrap">
   <h1>ผังช่องจอด 2 อาคาร</h1>
-  <p class="sub">แตะ "ขยาย" แล้วเลื่อนซ้ายขวาเพื่อดูเลขช่อง หรือใช้สองนิ้วซูม</p>
+  <p class="sub">แตะปุ่ม "ขยาย" ของอาคารที่ต้องการ แล้วเลื่อนดูเลขช่อง หรือใช้สองนิ้วซูม</p>
   <div class="btns">
-    <button type="button" class="btn primary" id="zoomBtn">ขยาย</button>
+    <!-- data-x/y = ตำแหน่งแถวช่องจอดบนผัง (สัดส่วนของความกว้าง/สูงภาพ) -->
+    <button type="button" class="btn primary zoomTo" data-x="0.66" data-y="0.50">ขยาย: อาคาร 2 ด้านใต้</button>
+    <button type="button" class="btn primary zoomTo" data-x="0.27" data-y="0.40">ขยาย: อาคาร 1 ด้านตะวันออก</button>
+    <button type="button" class="btn" id="fitBtn" hidden>ย่อ</button>
     <a class="btn" href="plan.svg">เปิดภาพเต็ม</a>
     <a class="btn" href="report.html">รายงานรถทอย</a>
   </div>
 </div>
-<div class="viewer" id="viewer"><img src="plan.svg" alt="ผังอาคาร 1 และอาคาร 2 พร้อมช่องจอดด้านใต้อาคาร 2"></div>
+<div class="viewer" id="viewer"><img src="plan.svg" alt="ผังอาคาร 1 และอาคาร 2 พร้อมช่องจอดด้านใต้อาคาร 2 และด้านตะวันออกอาคาร 1"></div>
 <div class="wrap"><p class="note">เลขช่องซ้ำได้ แยกด้วยสีพื้น (เหลือง / ขาว) · ช่องวางเรียงเท่า ๆ กัน ตำแหน่งจริงอาจคลาดเล็กน้อย</p></div>
 <script>
-const v = document.getElementById("viewer"), b = document.getElementById("zoomBtn");
-b.onclick = () => {
-  const z = v.classList.toggle("zoom");
-  b.textContent = z ? "ย่อ" : "ขยาย";
-  if (z) {
-    // พาไปที่แถวช่องจอดอาคาร 2 ด้านใต้
-    const img = v.querySelector("img");
-    requestAnimationFrame(() => {
-      v.scrollLeft = img.clientWidth * 0.66 - v.clientWidth / 2;
-      window.scrollTo({top: v.offsetTop + img.clientHeight * 0.5 - innerHeight / 2});
-    });
-  }
-};
+const v = document.getElementById("viewer"), fit = document.getElementById("fitBtn");
+document.querySelectorAll(".zoomTo").forEach(b => b.onclick = () => {
+  v.classList.add("zoom");
+  fit.hidden = false;
+  const img = v.querySelector("img");
+  requestAnimationFrame(() => {
+    v.scrollLeft = img.clientWidth * +b.dataset.x - v.clientWidth / 2;
+    window.scrollTo({top: v.offsetTop + img.clientHeight * +b.dataset.y - innerHeight / 2});
+  });
+});
+fit.onclick = () => { v.classList.remove("zoom"); fit.hidden = true; };
 </script>
 </body>
 </html>

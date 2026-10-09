@@ -5,7 +5,7 @@
   const API = "https://urbvwplaoznyhvcsvore.supabase.co/rest/v1";
   const KEY = "sb_publishable_Vudb-REBewSsT9BWbTf1zA_8pLvwgqQ"; // คีย์สาธารณะ อ่านได้ทุกคน เขียนได้แค่ผ่านฟังก์ชัน jt_set_parking_slot
   const POLL_MS = 10000;
-  const BUILDINGS = {"b2-south": "อาคาร 2 ด้านใต้", "b2-west": "อาคาร 2 ด้านตะวันตก", "b2-north": "อาคาร 2 ด้านเหนือ", "b1-inner-east": "อาคาร 1 ด้านตะวันออก"};
+  const BUILDINGS = {"b2-south": "อาคาร 2 ด้านใต้", "b2-west": "อาคาร 2 ด้านตะวันตก", "b2-north": "อาคาร 2 ด้านเหนือ", "b1-inner-east": "อาคาร 1 ด้านตะวันออก", "b1-west": "อาคาร 1 ด้านตะวันตก"};
   const COLORS = {yellow: "เหลือง", white: "ขาว"};
 
   const viewer = document.getElementById("viewer");

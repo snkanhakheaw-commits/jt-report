@@ -37,13 +37,14 @@ h1{margin:4px 0 2px;font-size:24px;line-height:1.3}
   <div class="btns">
     <!-- data-x/y = ตำแหน่งแถวช่องจอดบนผัง (สัดส่วนของความกว้าง/สูงภาพ) -->
     <button type="button" class="btn primary zoomTo" data-x="0.66" data-y="0.50">ขยาย: อาคาร 2 ด้านใต้</button>
+    <button type="button" class="btn primary zoomTo" data-x="0.32" data-y="0.37">ขยาย: อาคาร 2 ด้านตะวันตก</button>
     <button type="button" class="btn primary zoomTo" data-x="0.27" data-y="0.40">ขยาย: อาคาร 1 ด้านตะวันออก</button>
     <button type="button" class="btn" id="fitBtn" hidden>ย่อ</button>
     <a class="btn" href="plan.svg">เปิดภาพเต็ม</a>
     <a class="btn" href="report.html">รายงานรถทอย</a>
   </div>
 </div>
-<div class="viewer" id="viewer"><img src="plan.svg" alt="ผังอาคาร 1 และอาคาร 2 พร้อมช่องจอดด้านใต้อาคาร 2 และด้านตะวันออกอาคาร 1"></div>
+<div class="viewer" id="viewer"><img src="plan.svg" alt="ผังอาคาร 1 และอาคาร 2 พร้อมช่องจอดด้านใต้และด้านตะวันตกอาคาร 2 และด้านตะวันออกอาคาร 1"></div>
 <div class="wrap"><p class="note">เลขช่องซ้ำได้ แยกด้วยสีพื้น (เหลือง / ขาว) · ช่องวางเรียงเท่า ๆ กัน ตำแหน่งจริงอาจคลาดเล็กน้อย</p></div>
 <script>
 const v = document.getElementById("viewer"), fit = document.getElementById("fitBtn");

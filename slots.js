@@ -27,6 +27,7 @@
 .slot{min-height:48px;border-radius:10px;border:2px solid #a8860f;background:#f6d443;color:#283d48;font:inherit;font-weight:700;font-size:18px;cursor:pointer;padding:0;line-height:1.1}
 .slot.white{background:#fff;border-color:#6d8591}
 .slot small{display:block;font-size:11px;font-weight:600}
+.slot small.code{width:max-content;margin:2px auto 0;padding:0 5px;border-radius:4px;background:#283d48;color:#fff;font-weight:700;text-decoration:none}
 .slot.occ{background:#c8141c;border-color:#7a0b10;color:#fff;text-decoration:line-through}
 .slot:disabled{opacity:.55}
 .slotbar{position:sticky;top:0;z-index:2;background:var(--bg);border-bottom:1px solid var(--line);padding:8px 16px;font-size:14px;color:var(--muted);display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap}
@@ -146,12 +147,12 @@
         const grid = document.createElement("div");
         grid.className = "grid";
         gs.forEach((g, i) => {
-          const id = g.id, num = g.dataset.number;
-          const label = num ? `${COLORS[color] || color} ${num}` : `${COLORS[color] || color} ไม่มีเลข ${i + 1}`;
+          const id = g.id, num = g.dataset.number, code = g.dataset.code;
+          const label = (num ? `${COLORS[color] || color} ${num}` : `${COLORS[color] || color} ไม่มีเลข ${i + 1}`) + (code ? ` (${code})` : "");
           const btn = document.createElement("button");
           btn.type = "button";
           btn.className = `slot ${color}`;
-          btn.innerHTML = num ? num : `–<small>${i + 1}</small>`;
+          btn.innerHTML = (num ? num : `–<small>${i + 1}</small>`) + (code ? `<small class="code">${code}</small>` : "");
           btn.onclick = () => toggle(id);
           grid.appendChild(btn);
           g.dataset.slot = id;

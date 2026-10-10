@@ -36,17 +36,17 @@ h1{margin:4px 0 2px;font-size:24px;line-height:1.3}
   <p class="sub">แตะปุ่ม "ขยาย" ของอาคารที่ต้องการ แล้วเลื่อนดูเลขช่อง หรือใช้สองนิ้วซูม</p>
   <div class="btns">
     <!-- data-x/y = ตำแหน่งแถวช่องจอดบนผัง (สัดส่วนของความกว้าง/สูงภาพ) -->
-    <button type="button" class="btn primary zoomTo" data-x="0.66" data-y="0.50">ขยาย: อาคาร 2 ด้านใต้</button>
-    <button type="button" class="btn primary zoomTo" data-x="0.32" data-y="0.37">ขยาย: อาคาร 2 ด้านตะวันตก</button>
-    <button type="button" class="btn primary zoomTo" data-x="0.54" data-y="0.22">ขยาย: อาคาร 2 ด้านเหนือ</button>
-    <button type="button" class="btn primary zoomTo" data-x="0.27" data-y="0.40">ขยาย: อาคาร 1 ด้านตะวันออก</button>
-    <button type="button" class="btn primary zoomTo" data-x="0.08" data-y="0.46">ขยาย: อาคาร 1 ด้านตะวันตก</button>
+    <button type="button" class="btn primary zoomTo" data-x="0.66" data-y="0.50">ขยาย: อาคารขาเข้า ด้านใต้</button>
+    <button type="button" class="btn primary zoomTo" data-x="0.32" data-y="0.37">ขยาย: อาคารขาเข้า ด้านตะวันตก</button>
+    <button type="button" class="btn primary zoomTo" data-x="0.54" data-y="0.22">ขยาย: อาคารขาเข้า ด้านเหนือ</button>
+    <button type="button" class="btn primary zoomTo" data-x="0.27" data-y="0.40">ขยาย: อาคารขาออก ด้านตะวันออก</button>
+    <button type="button" class="btn primary zoomTo" data-x="0.08" data-y="0.46">ขยาย: อาคารขาออก ด้านตะวันตก</button>
     <button type="button" class="btn" id="fitBtn" hidden>ย่อ</button>
     <a class="btn" href="plan.svg">เปิดภาพเต็ม</a>
     <a class="btn" href="report.html">รายงานรถทอย</a>
   </div>
 </div>
-<div class="viewer" id="viewer"><img src="plan.svg" alt="ผังอาคาร 1 และอาคาร 2 พร้อมช่องจอดด้านใต้ ด้านตะวันตก และด้านเหนืออาคาร 2 และด้านตะวันออก ด้านตะวันตกอาคาร 1"></div>
+<div class="viewer" id="viewer"><img src="plan.svg" alt="ผังอาคารขาออก และอาคารขาเข้า พร้อมช่องจอดด้านใต้ ด้านตะวันตก และด้านเหนืออาคารขาเข้า และด้านตะวันออก ด้านตะวันตกอาคารขาออก"></div>
 <div class="wrap"><p class="note">เลขช่องซ้ำได้ แยกด้วยสีพื้น (เหลือง / ขาว) · ช่องวางเรียงเท่า ๆ กัน ตำแหน่งจริงอาจคลาดเล็กน้อย</p></div>
 <script>
 const v = document.getElementById("viewer"), fit = document.getElementById("fitBtn");

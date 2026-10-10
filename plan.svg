@@ -72,7 +72,7 @@
     </g>
     <text x="462" y="12" font-size="4.3" text-anchor="middle">เหนือจริง</text>
     <text x="465" y="44" font-size="3.8" text-anchor="middle" fill="#677b85">N</text>
-    <text x="84.13" y="145" font-size="5" text-anchor="middle" id="building-1-label" font-weight="600">อาคารขาออก (J&amp;T Gw)</text>
+    <text x="84.13" y="145" font-size="6" text-anchor="middle" id="building-1-label" font-weight="600">อาคารขาออก</text>
     <text x="84.13" y="155" font-size="4.5" text-anchor="middle" fill="#617986">อาคารรูปตัว L</text>
     <text x="84.13" y="165" font-size="4.2" text-anchor="middle" fill="#617986">ปีกตะวันตก</text>
     <text x="206" y="236" font-size="4.7" text-anchor="middle" fill="#617986">ปีกใต้ ลึก ≈ 42 ม.</text>

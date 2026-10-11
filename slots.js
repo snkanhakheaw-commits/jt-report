@@ -7,6 +7,10 @@
   const POLL_MS = 10000;
   const BUILDINGS = {"b2-south": "อาคารขาเข้า ด้านใต้", "b2-west": "อาคารขาเข้า ด้านตะวันตก", "b2-north": "อาคารขาเข้า ด้านเหนือ", "b1-inner-east": "อาคารขาออก ด้านตะวันออก", "b1-west": "อาคารขาออก ด้านตะวันตก"};
   const COLORS = {yellow: "เหลือง", white: "ขาว"};
+  // เปิดจากแอปกล้องลงเวลา (Android WebView ใส่ window.StampCam ไว้): แตะช่อง = เลือกช่องที่จอด ส่งกลับให้แอป แทนการสลับสถานะ
+  // แอปเป็นคนตั้งช่องเป็น ไม่ว่าง เอง · ?current=<slot id> = ช่องที่เลือกไว้ตอนนี้
+  const bridge = window.StampCam;
+  const current = new URLSearchParams(location.search).get("current");
 
   const viewer = document.getElementById("viewer");
   const img = viewer && viewer.querySelector("img");
@@ -30,6 +34,7 @@
 .slot small.code{width:max-content;margin:2px auto 0;padding:0 5px;border-radius:4px;background:#283d48;color:#fff;font-weight:700;text-decoration:none}
 .slot.occ{background:#c8141c;border-color:#7a0b10;color:#fff;text-decoration:line-through}
 .slot:disabled{opacity:.55}
+.slot.picked{outline:4px solid #1e88e5;outline-offset:2px}
 .slotbar{position:sticky;top:0;z-index:2;background:var(--bg);border-bottom:1px solid var(--line);padding:8px 16px;font-size:14px;color:var(--muted);display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap}
 .slotbar b{color:var(--ink)}
 .slotbar .err{color:var(--accent);font-weight:600}
@@ -41,7 +46,10 @@
 
   const bar = document.createElement("div");
   bar.className = "slotbar";
-  bar.innerHTML = `<span>แตะช่องเพื่อสลับ <b>ว่าง</b> / <b style="color:#c8141c">ไม่ว่าง</b></span><span id="slotStatus">กำลังโหลดสถานะ…</span>`;
+  bar.innerHTML = bridge
+    ? `<span><b>แตะช่องที่จอดรถ</b> แอปจะตั้งเป็น <b style="color:#c8141c">ไม่ว่าง</b> ให้</span><span id="slotStatus">กำลังโหลดสถานะ…</span>`
+    : `<span>แตะช่องเพื่อสลับ <b>ว่าง</b> / <b style="color:#c8141c">ไม่ว่าง</b></span><span id="slotStatus">กำลังโหลดสถานะ…</span>`;
+  if (bridge) document.querySelectorAll(".btns a").forEach(a => a.hidden = true); // ในแอปไม่ให้ออกไปหน้าอื่น
   viewer.before(bar);
   const statusEl = bar.querySelector("#slotStatus");
 
@@ -153,10 +161,12 @@
           btn.type = "button";
           btn.className = `slot ${color}`;
           btn.innerHTML = (num ? num : `–<small>${i + 1}</small>`) + (code ? `<small class="code">${code}</small>` : "");
-          btn.onclick = () => toggle(id);
+          const tap = () => bridge ? bridge.pick(id, slots[id].label) : toggle(id);
+          btn.onclick = tap;
+          if (id === current) btn.classList.add("picked");
           grid.appendChild(btn);
           g.dataset.slot = id;
-          g.addEventListener("click", () => toggle(id));
+          g.addEventListener("click", tap);
           slots[id] = {g, btn, building, label: `${BUILDINGS[building] || building} ${label}`};
         });
         list.append(h3, grid);
@@ -199,6 +209,7 @@
     });
 
     buildList(svg);
+    if (bridge && slots[current]) slots[current].btn.scrollIntoView({block: "center"});
     await load();
     setInterval(() => { if (!document.hidden) load(); }, POLL_MS);
     document.addEventListener("visibilitychange", () => { if (!document.hidden) load(); });

@@ -5,7 +5,7 @@
   const API = "https://urbvwplaoznyhvcsvore.supabase.co/rest/v1";
   const KEY = "sb_publishable_Vudb-REBewSsT9BWbTf1zA_8pLvwgqQ"; // คีย์สาธารณะ อ่านได้ทุกคน เขียนได้แค่ผ่านฟังก์ชัน jt_set_parking_slot
   const POLL_MS = 10000;
-  const BUILDINGS = {"b2-south": "อาคารขาเข้า ด้านใต้", "b2-west": "อาคารขาเข้า ด้านตะวันตก", "b2-north": "อาคารขาเข้า ด้านเหนือ", "b1-inner-east": "อาคารขาออก ด้านตะวันออก", "b1-west": "อาคารขาออก ด้านตะวันตก"};
+  const BUILDINGS = {"b2-south": "คลังใหม่ ด้านใต้", "b2-west": "คลังใหม่ ด้านตะวันตก", "b2-north": "คลังใหม่ ด้านเหนือ", "b1-inner-east": "คลังเก่า ด้านตะวันออก", "b1-west": "คลังเก่า ด้านตะวันตก"};
   const COLORS = {yellow: "เหลือง", white: "ขาว"};
   // เปิดจากแอปกล้องลงเวลา (Android WebView ใส่ window.StampCam ไว้): แตะช่อง = เลือกช่องที่จอด ส่งกลับให้แอป แทนการสลับสถานะ
   // แอปเป็นคนตั้งช่องเป็น ไม่ว่าง เอง · ?current=<slot id> = ช่องที่เลือกไว้ตอนนี้

@@ -19,7 +19,7 @@
     <text x="428" y="150" font-size="5.4" text-anchor="middle" transform="rotate(-73 428 150)" fill="#88949b">ถนนใหญ่ (AH2)</text>
   </g>
   <g id="yard">
-    <polygon id="paved-yard" points="27.50166,56.73581 133.55484,58.24653 252.94761,57.81774 396.01882,59.06492 391.25798,83.63495 384.11031,129.84692 375.76988,171.22673 356.80136,209.40077 342.37578,246.79173 333.54194,272.78350 283.52182,272.76935 28.33620,270.33655" fill="#f5f5f3" stroke="#aeb7b8" stroke-width="0.4" stroke-dasharray="2 1.4" />
+    <polygon id="paved-yard" points="27.50166,56.73581 133.55484,58.24653 252.94761,57.81774 396.01882,59.06492 391.25798,83.63495 390.20000,129.84692 382.80000,171.22673 356.80136,209.40077 342.37578,246.79173 333.54194,272.78350 283.52182,272.76935 28.33620,270.33655" fill="#f5f5f3" stroke="#aeb7b8" stroke-width="0.4" stroke-dasharray="2 1.4" />
   </g>
   <g id="buildings">
     <polygon id="b1-footprint" points="45.00000,74.00000 123.26651,74.00000 123.26651,211.22607 289.47630,211.22607 289.47630,253.00828 45.00000,253.00828" fill="#e9eef2" />
@@ -122,9 +122,9 @@
       <line x1="387" y1="84.34676" x2="387" y2="172.17417" />
       <line x1="385.7" y1="85.64676" x2="388.3" y2="83.04676" />
       <line x1="385.7" y1="173.47417000000002" x2="388.3" y2="170.87417" />
-      <text x="385" y="128.260465" font-size="4.3" text-anchor="middle" transform="rotate(-90 385 128.260465)" stroke="none">≈ 88 ม.</text>
-      <line x1="376" y1="84.34676" x2="389" y2="84.34676" />
-      <line x1="376" y1="172.17417" x2="389" y2="172.17417" />
+      <text x="385" y="160.5" font-size="4.3" text-anchor="middle" transform="rotate(-90 385 160.5)" stroke="none">≈ 88 ม.</text>
+      <line x1="380.5" y1="84.34676" x2="389" y2="84.34676" />
+      <line x1="380.5" y1="172.17417" x2="389" y2="172.17417" />
     </g>
     <line x1="14" y1="298" x2="486" y2="298" stroke="#d8e0e3" stroke-width="0.35" />
     <rect x="14" y="307" width="9" height="5" fill="#e9eef2" stroke="#aeb7b8" stroke-width="0.3" />
@@ -265,6 +265,22 @@
     <g class="code-badge" data-code="V1" pointer-events="none"><rect x="237.874" y="76.497" width="9.062" height="2.9" rx="0.6" fill="#283d48"/><text x="242.405" y="78.797" font-size="2.3" font-weight="700" text-anchor="middle" fill="#ffffff">V1</text></g>
     <g class="code-badge" data-code="A1" pointer-events="none"><rect x="191.698" y="76.497" width="24.453" height="2.9" rx="0.6" fill="#283d48"/><text x="203.925" y="78.797" font-size="2.3" font-weight="700" text-anchor="middle" fill="#ffffff">A1</text></g>
     <g class="code-badge" data-code="V2" pointer-events="none"><rect x="217.351" y="76.497" width="9.062" height="2.9" rx="0.6" fill="#283d48"/><text x="221.882" y="78.797" font-size="2.3" font-weight="700" text-anchor="middle" fill="#ffffff">V2</text></g>
+  </g>
+  <g id="docks-b2-east" data-wall="b2-east" data-from="south">
+    <g id="gap-b2-east-stairs"><title>ทางขึ้นลงบันได (เว้นประมาณ 4 ช่อง) · คลังใหม่ ด้านตะวันออก</title><polygon points="371.023,171.874 371.023,148.980 379.023,148.980 379.023,171.874" fill="none" stroke="#8b9aa2" stroke-width="0.35" stroke-dasharray="1.2 0.8"/><text x="375.023" y="158.627" font-size="2.2" text-anchor="middle" fill="#5f6f78">ทาง</text><text x="375.023" y="161.227" font-size="2.2" text-anchor="middle" fill="#5f6f78">ขึ้นลง</text><text x="375.023" y="163.827" font-size="2.2" text-anchor="middle" fill="#5f6f78">บันได</text></g>
+    <g id="dock-b2-east-01" data-number="62" data-color="yellow"><title>ช่อง 62 · สีเหลือง · คลังใหม่ ด้านตะวันออก</title><polygon points="371.023,148.480 371.023,143.132 379.023,143.132 379.023,148.480" fill="#f6d443" stroke="#a8860f" stroke-width="0.3"/><text x="375.023" y="146.912" font-size="3.4" font-weight="700" text-anchor="middle" fill="#283d48">62</text></g>
+    <g id="dock-b2-east-02" data-number="61" data-color="yellow"><title>ช่อง 61 · สีเหลือง · คลังใหม่ ด้านตะวันออก</title><polygon points="371.023,142.632 371.023,137.283 379.023,137.283 379.023,142.632" fill="#f6d443" stroke="#a8860f" stroke-width="0.3"/><text x="375.023" y="141.063" font-size="3.4" font-weight="700" text-anchor="middle" fill="#283d48">61</text></g>
+    <g id="gap-b2-east-1"><title>เว้นว่าง 1 ช่อง · คลังใหม่ ด้านตะวันออก</title><polygon points="371.023,136.783 371.023,131.435 379.023,131.435 379.023,136.783" fill="none" stroke="#8b9aa2" stroke-width="0.35" stroke-dasharray="1.2 0.8"/><text x="375.023" y="134.909" font-size="2.2" text-anchor="middle" fill="#5f6f78">เว้น</text></g>
+    <g id="dock-b2-east-03" data-number="60" data-color="yellow"><title>ช่อง 60 · สีเหลือง · คลังใหม่ ด้านตะวันออก</title><polygon points="371.023,130.935 371.023,125.586 379.023,125.586 379.023,130.935" fill="#f6d443" stroke="#a8860f" stroke-width="0.3"/><text x="375.023" y="129.366" font-size="3.4" font-weight="700" text-anchor="middle" fill="#283d48">60</text></g>
+    <g id="dock-b2-east-04" data-number="59" data-color="yellow"><title>ช่อง 59 · สีเหลือง · คลังใหม่ ด้านตะวันออก</title><polygon points="371.023,125.086 371.023,119.738 379.023,119.738 379.023,125.086" fill="#f6d443" stroke="#a8860f" stroke-width="0.3"/><text x="375.023" y="123.518" font-size="3.4" font-weight="700" text-anchor="middle" fill="#283d48">59</text></g>
+    <g id="gap-b2-east-2"><title>เว้นว่าง 1 ช่อง · คลังใหม่ ด้านตะวันออก</title><polygon points="371.023,119.238 371.023,113.889 379.023,113.889 379.023,119.238" fill="none" stroke="#8b9aa2" stroke-width="0.35" stroke-dasharray="1.2 0.8"/><text x="375.023" y="117.364" font-size="2.2" text-anchor="middle" fill="#5f6f78">เว้น</text></g>
+    <g id="dock-b2-east-05" data-number="58" data-color="yellow"><title>ช่อง 58 · สีเหลือง · คลังใหม่ ด้านตะวันออก</title><polygon points="371.023,113.389 371.023,108.041 379.023,108.041 379.023,113.389" fill="#f6d443" stroke="#a8860f" stroke-width="0.3"/><text x="375.023" y="111.821" font-size="3.4" font-weight="700" text-anchor="middle" fill="#283d48">58</text></g>
+    <g id="dock-b2-east-06" data-number="29" data-color="white"><title>ช่อง 29 · สีขาว · คลังใหม่ ด้านตะวันออก</title><polygon points="371.023,107.541 371.023,102.192 379.023,102.192 379.023,107.541" fill="#ffffff" stroke="#6d8591" stroke-width="0.3"/><text x="375.023" y="105.973" font-size="3.4" font-weight="700" text-anchor="middle" fill="#283d48">29</text></g>
+    <g id="dock-b2-east-07" data-number="28" data-color="white"><title>ช่อง 28 · สีขาว · คลังใหม่ ด้านตะวันออก</title><polygon points="371.023,101.692 371.023,96.344 379.023,96.344 379.023,101.692" fill="#ffffff" stroke="#6d8591" stroke-width="0.3"/><text x="375.023" y="100.124" font-size="3.4" font-weight="700" text-anchor="middle" fill="#283d48">28</text></g>
+    <g id="dock-b2-east-08" data-number="27" data-color="white"><title>ช่อง 27 · สีขาว · คลังใหม่ ด้านตะวันออก</title><polygon points="371.023,95.844 371.023,90.495 379.023,90.495 379.023,95.844" fill="#ffffff" stroke="#6d8591" stroke-width="0.3"/><text x="375.023" y="94.276" font-size="3.4" font-weight="700" text-anchor="middle" fill="#283d48">27</text></g>
+    <g id="gap-b2-east-3"><title>เว้นว่าง 1 ช่อง · คลังใหม่ ด้านตะวันออก</title><polygon points="371.023,89.995 371.023,84.647 379.023,84.647 379.023,89.995" fill="none" stroke="#8b9aa2" stroke-width="0.35" stroke-dasharray="1.2 0.8"/><text x="375.023" y="88.121" font-size="2.2" text-anchor="middle" fill="#5f6f78">เว้น</text></g>
+    <polyline points="379.623,148.480 380.623,148.480 380.623,108.041 379.623,108.041" fill="none" stroke="#a8860f" stroke-width="0.3"/>    <text x="384.423" y="128.260" font-size="3.4" text-anchor="middle" fill="#5b5030" transform="rotate(-90 384.423 128.260)">เหลือง 58–62</text>
+    <polyline points="379.623,107.541 380.623,107.541 380.623,90.495 379.623,90.495" fill="none" stroke="#6d8591" stroke-width="0.3"/>    <text x="384.423" y="99.018" font-size="3.4" text-anchor="middle" fill="#5b5030" transform="rotate(-90 384.423 99.018)">ขาว 27–29</text>
   </g>
   <g id="docks-b1-inner-east" data-wall="b1-inner-east" data-from="south">
     <g id="corner-b1-inner-east"><title>เว้นมุมไว้เลี้ยวรถ · คลังเก่า ด้านตะวันออก</title><polygon points="123.567,210.726 123.567,199.726 131.567,199.726 131.567,210.726" fill="none" stroke="#8b9aa2" stroke-width="0.35" stroke-dasharray="1.2 0.8"/><path d="M136.267 190.226 L136.267 197.226 A8.0 8.0 0 0 0 144.267 205.226 L152.267 205.226" fill="none" stroke="#8b9aa2" stroke-width="0.6" stroke-dasharray="2 1.2"/><polygon points="152.267,205.226 150.067,206.326 150.067,204.126" fill="#8b9aa2"/><text x="153.767" y="206.426" font-size="3.4" text-anchor="start" fill="#5f6f78">เว้นมุมไว้เลี้ยวรถ</text></g>

@@ -5,7 +5,7 @@
   const API = "https://urbvwplaoznyhvcsvore.supabase.co/rest/v1";
   const KEY = "sb_publishable_Vudb-REBewSsT9BWbTf1zA_8pLvwgqQ"; // คีย์สาธารณะ อ่านได้ทุกคน เขียนได้แค่ผ่านฟังก์ชัน jt_set_parking_slot
   const POLL_MS = 10000;
-  const BUILDINGS = {"b2-south": "คลังใหม่ ด้านใต้", "b2-west": "คลังใหม่ ด้านตะวันตก", "b2-north": "คลังใหม่ ด้านเหนือ", "b2-east": "คลังใหม่ ด้านตะวันออก", "b1-inner-east": "คลังเก่า ด้านตะวันออก", "b1-west": "คลังเก่า ด้านตะวันตก"};
+  const BUILDINGS = {"b2-south": "คลังใหม่ ด้านใต้", "b2-west": "คลังใหม่ ด้านตะวันตก", "b2-north": "คลังใหม่ ด้านเหนือ", "b2-east": "คลังใหม่ ด้านตะวันออก", "b1-inner-east": "คลังเก่า ด้านตะวันออก", "b1-west": "คลังเก่า ด้านตะวันตก", "b1-south": "คลังเก่า ด้านใต้"};
   const COLORS = {yellow: "เหลือง", white: "ขาว"};
   // เปิดจากแอปกล้องลงเวลา (Android WebView ใส่ window.StampCam ไว้): แตะช่อง = เลือกช่องที่จอด ส่งกลับให้แอป แทนการสลับสถานะ
   // แอปเป็นคนตั้งช่องเป็น ไม่ว่าง เอง · ?current=<slot id> = ช่องที่เลือกไว้ตอนนี้
@@ -142,7 +142,8 @@
         prevKey = key;
       }
       // ลำดับหัวข้อ: กลุ่มมีเลขเรียงตามเลขต่ำสุด (เหลืองก่อนขาวถ้าเท่ากัน) แล้วค่อยกลุ่มไม่มีเลข
-      const minNum = gs => gs[0].dataset.number ? Math.min(...gs.map(g => +g.dataset.number)) : Infinity;
+      // ช่องชื่อเป็นตัวอักษร (เช่น F, G) ต่อท้ายกลุ่มที่เป็นเลข ก่อนกลุ่มไม่มีเลข
+      const minNum = gs => gs[0].dataset.number ? Math.min(...gs.map(g => +g.dataset.number || 1e9)) : Infinity;
       const colorRank = gs => gs[0].dataset.color === "yellow" ? 0 : 1;
       groups.sort((a, b) => minNum(a) - minNum(b) || colorRank(a) - colorRank(b));
       for (const gs of groups) {
@@ -150,7 +151,7 @@
         gs.sort((a, b) => (+a.dataset.number || 0) - (+b.dataset.number || 0));
         const h3 = document.createElement("h3");
         h3.textContent = numbered
-          ? `สี${COLORS[color] || color} ${gs[0].dataset.number}–${gs[gs.length - 1].dataset.number}`
+          ? `สี${COLORS[color] || color} ${gs[0].dataset.number}` + (gs.length > 1 ? `–${gs[gs.length - 1].dataset.number}` : "")
           : `สี${COLORS[color] || color} ไม่มีเลข (${gs.length} ช่อง)`;
         const grid = document.createElement("div");
         grid.className = "grid";

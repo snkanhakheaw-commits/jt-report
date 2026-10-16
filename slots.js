@@ -5,8 +5,9 @@
   const API = "https://urbvwplaoznyhvcsvore.supabase.co/rest/v1";
   const KEY = "sb_publishable_Vudb-REBewSsT9BWbTf1zA_8pLvwgqQ"; // คีย์สาธารณะ อ่านได้ทุกคน เขียนได้แค่ผ่านฟังก์ชัน jt_set_parking_slot
   const POLL_MS = 10000;
-  const BUILDINGS = {"b2-south": "คลังใหม่ ด้านใต้", "b2-west": "คลังใหม่ ด้านตะวันตก", "b2-north": "คลังใหม่ ด้านเหนือ", "b2-east": "คลังใหม่ ด้านตะวันออก", "b1-inner-east": "คลังเก่า ด้านตะวันออก", "b1-west": "คลังเก่า ด้านตะวันตก", "b1-south": "คลังเก่า ด้านใต้"};
+  const BUILDINGS = {"b2-south": "คลังใหม่ ด้านใต้", "b2-west": "คลังใหม่ ด้านตะวันตก", "b2-north": "คลังใหม่ ด้านเหนือ", "b2-east": "คลังใหม่ ด้านตะวันออก", "b1-inner-east": "คลังเก่า ด้านตะวันออก", "b1-inner-north": "คลังเก่า ด้านเหนือ (ผนังใน)", "b1-west": "คลังเก่า ด้านตะวันตก", "b1-south": "คลังเก่า ด้านใต้"};
   const COLORS = {yellow: "เหลือง", white: "ขาว"};
+  const FROM = {north: "เหนือ", south: "ใต้", east: "ตะวันออก", west: "ตะวันตก"};
   // เปิดจากแอปกล้องลงเวลา (Android WebView ใส่ window.StampCam ไว้): แตะช่อง = เลือกช่องที่จอด ส่งกลับให้แอป แทนการสลับสถานะ
   // แอปเป็นคนตั้งช่องเป็น ไม่ว่าง เอง · ?current=<slot id> = ช่องที่เลือกไว้ตอนนี้
   const bridge = window.StampCam;
@@ -146,22 +147,25 @@
       const minNum = gs => gs[0].dataset.number ? Math.min(...gs.map(g => +g.dataset.number || 1e9)) : Infinity;
       const colorRank = gs => gs[0].dataset.color === "yellow" ? 0 : 1;
       groups.sort((a, b) => minNum(a) - minNum(b) || colorRank(a) - colorRank(b));
+      // ช่องไม่มีเลขนับลำดับต่อกันทั้งด้าน (เช่น ด้านใต้คลังเก่ามี 2 กลุ่มคั่นด้วย F) ป้ายจะได้ไม่ซ้ำ
+      let blankNo = 0;
       for (const gs of groups) {
         const color = gs[0].dataset.color, numbered = !!gs[0].dataset.number;
         gs.sort((a, b) => (+a.dataset.number || 0) - (+b.dataset.number || 0));
+        const first = blankNo + 1;
         const h3 = document.createElement("h3");
         h3.textContent = numbered
           ? `สี${COLORS[color] || color} ${gs[0].dataset.number}` + (gs.length > 1 ? `–${gs[gs.length - 1].dataset.number}` : "")
-          : `สี${COLORS[color] || color} ไม่มีเลข (${gs.length} ช่อง)`;
+          : `สี${COLORS[color] || color} ไม่มีเลข (${gs.length} ช่อง)` + (gs.length > 1 ? ` · ลำดับ ${first}–${first + gs.length - 1} นับจากฝั่ง${FROM[wall.dataset.from] || wall.dataset.from}` : "");
         const grid = document.createElement("div");
         grid.className = "grid";
-        gs.forEach((g, i) => {
-          const id = g.id, num = g.dataset.number, code = g.dataset.code;
-          const label = (num ? `${COLORS[color] || color} ${num}` : `${COLORS[color] || color} ไม่มีเลข ${i + 1}`) + (code ? ` (${code})` : "");
+        gs.forEach(g => {
+          const id = g.id, num = g.dataset.number, code = g.dataset.code, no = num ? 0 : ++blankNo;
+          const label = (num ? `${COLORS[color] || color} ${num}` : `${COLORS[color] || color} ไม่มีเลข ${no}`) + (code ? ` (${code})` : "");
           const btn = document.createElement("button");
           btn.type = "button";
           btn.className = `slot ${color}`;
-          btn.innerHTML = (num ? num : `–<small>${i + 1}</small>`) + (code ? `<small class="code">${code}</small>` : "");
+          btn.innerHTML = (num ? num : `–<small>${no}</small>`) + (code ? `<small class="code">${code}</small>` : "");
           const tap = () => bridge ? bridge.pick(id, slots[id].label) : toggle(id);
           btn.onclick = tap;
           if (id === current) btn.classList.add("picked");

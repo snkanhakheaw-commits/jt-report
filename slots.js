@@ -12,9 +12,11 @@
   const SIDE_KEY = "jt-slots-side"; // จำด้านที่เปิดล่าสุดในเครื่อง (ไม่เลือกช่องให้เอง)
   const CLOSEUP_M = [64, 36];       // ผังใกล้ช่อง กว้าง × สูง (เมตร) รอบช่องที่แตะ
   // เปิดจากแอปกล้องลงเวลา (Android WebView ใส่ window.StampCam ไว้): กดยืนยัน = ส่งช่องกลับให้แอป แทนการสลับสถานะ
-  // แอปเป็นคนตั้งช่องเป็น ไม่ว่าง เอง · ?current=<slot id> = ช่องที่เลือกไว้ตอนนี้
+  // แอปเป็นคนตั้งช่องเป็น ไม่ว่าง เอง · ?current=<slot id> = ช่องที่เลือกไว้ตอนนี้ · ?plate= = ทะเบียนรถในแอป (บอกว่าช่องไหนเป็นของรถคุณ)
   const bridge = window.StampCam;
-  const current = new URLSearchParams(location.search).get("current");
+  const params = new URLSearchParams(location.search);
+  const current = params.get("current");
+  const myPlate = params.get("plate") || "";
 
   const viewer = document.getElementById("viewer");
   const img = viewer && viewer.querySelector("img");
@@ -61,6 +63,7 @@
 .res .rt small{display:block;color:var(--muted);font-size:13px}
 .res .rs{font-size:14px;font-weight:600;color:var(--muted)}
 .res .rs.o{color:#c8141c}
+.res .rs small{display:block;font-size:12px;text-align:right}
 .res.picked{outline:3px solid #1e88e5;outline-offset:1px}
 .empty{color:var(--muted);margin:12px 0 0}
 .num{display:inline-grid;place-items:center;min-width:48px;height:42px;padding:0 6px;border-radius:8px;border:2px solid #a8860f;background:#f6d443;color:#283d48;font-weight:700;font-size:19px;flex:none}
@@ -159,6 +162,23 @@
     return i < 0 ? [name, wall] : [name.slice(0, i), name.slice(i + 1)];
   };
   const statusOf = id => pending.has(id) ? "กำลังบันทึก…" : !known() ? "ยังไม่ทราบสถานะ" : occupied(id) ? "ไม่ว่าง" : "ว่าง";
+  // ทะเบียนรุ่นเก่ามีจังหวัดต่อท้าย ("72-7980 นครปฐม") ยังนับเป็นรถคันเดียวกัน (ตรงกับ parkingPlateKey ในแอป)
+  const plateKey = p => { const t = (p || "").trim(), m = /^(\d{2}-\d{4})(?:\s|$)/.exec(t); return m ? m[1] : t; };
+  const mine = id => !!myPlate && occupied(id) && plateKey(state[id].plate) === plateKey(myPlate);
+  // "08:10" วันนี้ · "เมื่อวาน 22:10" · "20 ต.ค. 22:10"
+  function dayTime(iso) {
+    const d = new Date(iso), today = new Date(), y = new Date();
+    y.setDate(today.getDate() - 1);
+    if (d.toDateString() === today.toDateString()) return timeOf(d);
+    if (d.toDateString() === y.toDateString()) return `เมื่อวาน ${timeOf(d)}`;
+    return `${d.toLocaleDateString("th-TH", {day: "numeric", month: "short"})} ${timeOf(d)}`;
+  }
+  // รายละเอียดคนจอด: "รถ 72-7980 · ตั้งแต่ 08:10" (ทะเบียนมาจากฐานข้อมูลที่ใครก็เขียนได้ ต้อง escape ก่อนใส่ HTML)
+  function holderOf(id) {
+    const s = state[id];
+    if (!s || !s.occupied) return "";
+    return (s.plate ? `รถ ${s.plate}` : "ไม่ระบุรถ") + (s.since ? ` · ตั้งแต่ ${dayTime(s.since)}` : "");
+  }
   const countOf = ids => known() ? `ว่าง ${ids.filter(id => !occupied(id)).length}/${ids.length}` : `${ids.length} ช่อง`;
   const titleOf = s => `${COLORS[s.color] || s.color} ` + (s.num || `ไม่มีเลข ${s.no}`);
 
@@ -173,7 +193,7 @@
     const s = slots[id], occ = occupied(id), unk = !known();
     for (const el of [s.g, s.btn]) { el.classList.toggle("occ", occ); el.classList.toggle("unk", unk); }
     s.btn.disabled = pending.has(id);
-    const when = known() && state[id] ? ` · เปลี่ยนเมื่อ ${timeOf(state[id].updated_at)}` : "";
+    const when = !known() || !state[id] ? "" : occ ? ` · ${holderOf(id)}` : ` · เปลี่ยนเมื่อ ${timeOf(state[id].updated_at)}`;
     s.btn.title = `${s.label} · ${statusOf(id)}${when}`;
     s.btn.setAttribute("aria-label", `${s.label} · ${statusOf(id)}`);
   }
@@ -207,7 +227,7 @@
 
   async function load() {
     try {
-      const r = await fetch(`${API}/jt_parking_slots?select=slot_id,occupied,updated_at`, {headers, cache: "no-store"});
+      const r = await fetch(`${API}/jt_parking_slots?select=slot_id,occupied,updated_at,plate,since,version`, {headers, cache: "no-store"});
       if (!r.ok) throw new Error(r.status);
       for (const row of await r.json()) if (!pending.has(row.slot_id)) state[row.slot_id] = row;
       loadedAt = new Date();
@@ -219,17 +239,20 @@
     renderAll();
   }
 
+  // ส่ง version ที่เห็นอยู่ไปด้วย (ช่องที่ยังไม่มีแถว = 0) ถ้ามีคนเปลี่ยนก่อน ฐานข้อมูลคืน conflict แทนการทับ
   async function setSlot(id, next) {
     if (pending.has(id) || !known()) return;
-    const prev = state[id];
-    state[id] = {slot_id: id, occupied: next, updated_at: new Date().toISOString()};
+    const prev = state[id], now = new Date().toISOString();
+    state[id] = {slot_id: id, occupied: next, updated_at: now, plate: null, since: next ? now : null, version: prev ? prev.version : 0};
     pending.add(id);
     renderAll();
     try {
-      const r = await fetch(`${API}/rpc/jt_set_parking_slot`, {method: "POST", headers, body: JSON.stringify({p_slot_id: id, p_occupied: next})});
+      const r = await fetch(`${API}/rpc/jt_set_parking_slot_v2`, {method: "POST", headers,
+        body: JSON.stringify({p_slot_id: id, p_occupied: next, p_version: prev && prev.version != null ? prev.version : 0})});
       if (!r.ok) throw new Error(r.status);
-      state[id] = await r.json();
-      saveErr = "";
+      const row = await r.json();
+      state[id] = row;
+      saveErr = row.conflict ? `${slots[id].label} เพิ่งถูกเปลี่ยนจากที่อื่น ดูสถานะล่าสุดแล้วค่อยกดใหม่` : "";
     } catch (e) {
       if (prev) state[id] = prev; else delete state[id];
       saveErr = `บันทึก ${slots[id].label} ไม่สำเร็จ ลองใหม่`;
@@ -360,7 +383,7 @@
       row.className = "res" + (id === current ? " picked" : "");
       row.innerHTML = `<span class="num ${s.color}${occ ? " occ" : ""}${known() ? "" : " unk"}">${s.num || "–"}</span>`
         + `<span class="rt"><b>${titleOf(s)}${s.code ? ` · รหัส ${s.code}` : ""}</b><small>${s.building} · ${s.side}</small></span>`
-        + `<span class="rs${occ ? " o" : ""}">${statusOf(id)}</span>`;
+        + `<span class="rs${occ ? " o" : ""}">${statusOf(id)}${occ && state[id].plate ? `<small>${esc(state[id].plate)}</small>` : ""}</span>`;
       row.onclick = () => openSheet(id);
       return row;
     });
@@ -415,21 +438,31 @@
     numEl.className = `num ${s.color}${occ ? " occ" : ""}${known() ? "" : " unk"}`;
     numEl.textContent = s.num || "–";
     sheetSel.classList.toggle("occ", occ);
-    const when = state[id] ? ` · เปลี่ยนเมื่อ ${timeOf(state[id].updated_at)}` : "";
+    const when = !state[id] ? "" : occ ? ` · ${esc(holderOf(id))}` : ` · เปลี่ยนเมื่อ ${timeOf(state[id].updated_at)}`;
     sheet(".st").innerHTML = known()
       ? `สถานะ: <b class="${occ ? "o" : ""}">${statusOf(id)}</b>${when}` + (loadFailed ? ` · ข้อมูลเมื่อ ${timeOf(loadedAt)} (โหลดใหม่ไม่ได้)` : "")
       : `สถานะ: <b>ยังไม่ทราบ</b> · ${loadFailed ? "โหลดไม่ได้ (เช็คเน็ต)" : "กำลังโหลด…"}`;
 
     let text, act = null, msg = "", warn = false;
     if (bridge) {
-      act = () => { closeSheet(); bridge.pick(id, s.label); };
-      if (id === current) {
+      // ช่องไม่ว่างที่คนขับเห็นในหน้านี้แล้วกดยืนยัน = แทนที่รอบเดิมได้ (takeover) · ยังไม่ทราบสถานะ = ให้ฐานข้อมูลตัดสิน แอปจะถามอีกทีถ้าชน
+      act = () => {
+        closeSheet();
+        if (typeof bridge.pickSlot === "function") bridge.pickSlot(id, s.label, occ);
+        else bridge.pick(id, s.label); // แอปรุ่นก่อนมีแค่ pick
+      };
+      const other = occ && !mine(id);
+      if (other) {
+        text = "ยืนยัน รถฉันจอดช่องนี้";
+        msg = (id === current ? "ช่องที่เลือกไว้ แต่บนผังขึ้นว่ารถคันอื่นจอดอยู่" : "ช่องนี้มีรถคันอื่นตั้งไว้")
+          + " ตรวจคลัง ด้าน สี และเลขช่องอีกครั้ง ถ้ารถคุณจอดช่องนี้จริงกดยืนยันได้";
+        warn = true;
+      } else if (id === current) {
         text = "ใช้ช่องนี้ต่อ";
         msg = "ช่องที่เลือกไว้ตอนนี้";
       } else if (occ) {
-        text = "ยืนยัน รถฉันจอดช่องนี้";
-        msg = "ช่องนี้ขึ้น ไม่ว่าง อยู่ ตรวจคลัง ด้าน สี และเลขช่องอีกครั้ง ถ้ารถคุณจอดช่องนี้จริงกดยืนยันได้";
-        warn = true;
+        text = "จอดช่องนี้";
+        msg = `ช่องนี้ตั้งไว้เป็นของรถคุณ (${state[id].plate}) อยู่แล้ว`;
       } else {
         text = "จอดช่องนี้";
         if (!known()) msg = "ยังไม่ทราบว่าช่องนี้ว่างไหม เลือกได้ตามปกติ แอปจะตั้งเป็น ไม่ว่าง ให้เมื่อเชื่อมต่อได้";

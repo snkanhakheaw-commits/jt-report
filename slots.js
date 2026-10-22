@@ -20,6 +20,7 @@
   const img = viewer && viewer.querySelector("img");
   if (!img) return;
 
+  // ห้ามใช้หน่วย vh: WebView ในแอปกล้อง (เปิดใน Dialog) คิด 100vh = 0 ใช้ % ของกล่อง fixed แทน
   const css = document.createElement("style");
   css.textContent = `
 [hidden]{display:none!important}
@@ -77,7 +78,7 @@
 .maphead{max-width:560px;margin:0 auto;padding:8px 16px 10px;display:flex;flex-wrap:wrap;align-items:center;gap:8px}
 .maphead h2{font-size:19px;margin:0 auto 0 0}
 .sheet-back{position:fixed;inset:0;z-index:10;background:rgba(0,0,0,.5);display:flex;align-items:flex-end;justify-content:center}
-.sheet{width:100%;max-width:560px;max-height:94vh;overflow:auto;background:var(--surface);color:var(--ink);border-radius:18px 18px 0 0;padding:14px 16px calc(16px + env(safe-area-inset-bottom))}
+.sheet{width:100%;max-width:560px;max-height:calc(100% - 16px);overflow:auto;background:var(--surface);color:var(--ink);border-radius:18px 18px 0 0;padding:14px 16px calc(16px + env(safe-area-inset-bottom))}
 .sheet-head{display:flex;align-items:center;gap:12px}
 .sheet-head .t{font-size:22px;font-weight:700;line-height:1.25}
 .sheet-head .s{font-size:14px;color:var(--muted);line-height:1.4}

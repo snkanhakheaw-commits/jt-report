@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>แอปกล้องลงเวลา</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f5f4f0;--surface:#fff;--ink:#1c1c1e;--muted:#67676d;--line:#e3e1db;--accent:#c8141c;--accent-ink:#fff;--chip:#eeece6;--note:#e3effc;--note-ink:#0d3c6e}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#121214;--surface:#1d1d20;--ink:#f1f1f3;--muted:#a2a2aa;--line:#2f2f34;--accent:#ff4b53;--accent-ink:#1a0001;--chip:#29292d;--note:#16273a;--note-ink:#cfe3fb}}
+:root[data-theme="dark"]{--bg:#121214;--surface:#1d1d20;--ink:#f1f1f3;--muted:#a2a2aa;--line:#2f2f34;--accent:#ff4b53;--accent-ink:#1a0001;--chip:#29292d;--note:#16273a;--note-ink:#cfe3fb}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"IBM Plex Sans Thai","Sarabun","Leelawadee UI","Noto Sans Thai",system-ui,sans-serif;font-size:17px;line-height:1.6}
+a{color:inherit}
+.wrap{max-width:560px;margin:0 auto;padding:16px 16px 40px}
+h1{margin:8px 0 2px;font-size:26px;line-height:1.3}
+.sub{margin:0 0 16px;color:var(--muted);font-size:15px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:16px;margin:0 0 16px}
+.ver{display:flex;justify-content:space-between;align-items:baseline;gap:8px;flex-wrap:wrap;margin:0 0 4px}
+.ver b{font-size:19px}
+.ver span{color:var(--muted);font-size:14px}
+.notes{margin:0 0 14px;color:var(--muted);font-size:15px}
+.btn{display:flex;align-items:center;justify-content:center;min-height:52px;padding:0 16px;border-radius:12px;border:1px solid var(--line);background:var(--chip);color:var(--ink);font:inherit;font-weight:700;text-decoration:none}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:var(--accent-ink);font-size:18px}
+.btn + .btn{margin-top:8px}
+h2{font-size:20px;margin:28px 0 8px}
+ol.steps{margin:0;padding:0;list-style:none;counter-reset:s}
+ol.steps>li{counter-increment:s;position:relative;padding:0 0 16px 44px}
+ol.steps>li::before{content:counter(s);position:absolute;left:0;top:0;width:30px;height:30px;border-radius:50%;background:var(--ink);color:var(--bg);font-weight:700;display:grid;place-items:center;font-size:15px}
+ol.steps b{display:block;margin:0 0 2px}
+ul{margin:4px 0 0;padding-left:20px}
+li{margin:2px 0}
+.note{background:var(--note);color:var(--note-ink);border-radius:12px;padding:10px 14px;font-size:15px;margin:8px 0 0}
+dl{margin:0}
+dt{font-weight:700;margin:12px 0 0}
+dd{margin:0;color:var(--muted)}
+.foot{margin:28px 0 0;color:var(--muted);font-size:14px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>แอปกล้องลงเวลา</h1>
+  <p class="sub">ถ่ายภาพยืนยันงาน ประทับชื่อ ตำแหน่ง ทะเบียนรถ วันเวลา และช่องจอด · ทีมรถทอย คลัง J&amp;T AYA ลาดหลุมแก้ว · ใช้กับมือถือ Android</p>
+
+  <div class="card">
+    <div class="ver"><b id="verName">รุ่น 1.1</b><span id="verMeta">13 MB</span></div>
+    <p class="notes" id="verNotes"></p>
+    <a class="btn primary" id="apk" href="https://github.com/snkanhakheaw-commits/jt-report/releases/download/stampcam-v1.1/stampcam-1.1.apk">ดาวน์โหลดแอป</a>
+    <a class="btn" href="../map.html">เปิดผังช่องจอด</a>
+  </div>
+
+  <h2>ติดตั้งครั้งแรก</h2>
+  <ol class="steps">
+    <li><b>ลงทะเบียนเครื่องกับผู้ดูแลแอปก่อน</b>
+      ตั้งแต่ 30 ก.ย. 2569 มือถือ Android ในไทยติดตั้งแอปนอก Play Store ได้เฉพาะเครื่องที่ลงทะเบียนกับ Google แล้ว ขอ QR code หรือลิงก์ลงทะเบียนจากผู้ดูแลแอป แล้วกดยินยอมบนเครื่องของคุณ (ทำครั้งเดียว)</li>
+    <li><b>ดาวน์โหลด</b>
+      เปิดหน้านี้ใน Chrome แล้วกด "ดาวน์โหลดแอป"
+      <ul><li>ถ้าขึ้นว่าไฟล์อาจเป็นอันตราย กด "ดาวน์โหลดต่อ"</li></ul></li>
+    <li><b>ติดตั้ง</b>
+      เปิดไฟล์ที่ดาวน์โหลด
+      <ul>
+        <li>ถ้าขึ้นว่าไม่อนุญาตให้ติดตั้งจากแหล่งนี้ กด "การตั้งค่า" เปิด "อนุญาตจากแหล่งนี้" แล้วกดย้อนกลับ</li>
+        <li>กด "ติดตั้ง" · ถ้า Play Protect ถาม กด "รายละเอียดเพิ่มเติม" แล้ว "ติดตั้งต่อไป"</li>
+      </ul></li>
+    <li><b>ตั้งค่าในแอป</b>
+      อนุญาตกล้อง ตำแหน่ง และไมโครโฟน (ใช้ตอนถ่ายวิดีโอ) แล้วกรอกชื่อ ตำแหน่ง และเลือกทะเบียนรถที่ขับวันนี้</li>
+  </ol>
+
+  <h2>ใช้งาน</h2>
+  <dl>
+    <dt>เลือกช่องจอด</dt>
+    <dd>แตะปุ่ม P มุมซ้ายบน → เลือกคลัง → เลือกด้าน → แตะเลขช่อง ตรวจผังใกล้ช่องแล้วกด "จอดช่องนี้" (ค้นหาเลขหรือรหัสช่องก็ได้)</dd>
+    <dt>ออกจากช่อง / เปลี่ยนช่อง</dt>
+    <dd>แตะปุ่ม P → "ออกจากช่อง" หรือ "เปลี่ยนช่องจอด"</dd>
+    <dt>เปลี่ยนรถ</dt>
+    <dd>แตะรูปคนมุมซ้ายบน แล้วเลือกทะเบียนใหม่ ช่องของรถคันเดิมจะคืนให้เอง</dd>
+    <dt>หลายคนใช้รถคันเดียวกัน</dt>
+    <dd>ใครย้ายรถไปช่องไหน มือถือเครื่องอื่นที่เลือกทะเบียนเดียวกันจะเปลี่ยนช่องตามเองเมื่อเปิดแอปครั้งถัดไป</dd>
+    <dt>ข้ามวัน</dt>
+    <dd>เปิดแอปวันใหม่ แอปจะถามว่ายังจอดช่องเดิมอยู่ไหม ตอบก่อนจึงจะประทับช่องลงภาพ</dd>
+    <dt>ไม่มีเน็ต</dt>
+    <dd>ยังถ่ายภาพและเลือกช่องได้ (ใช้ผังในเครื่อง แต่ไม่รู้ว่าช่องไหนว่าง) แอปจะส่งช่องขึ้นผังเองเมื่อเชื่อมต่อได้</dd>
+    <dt>อัปเดต</dt>
+    <dd>มีรุ่นใหม่ แอปจะขึ้นกล่องให้กดดาวน์โหลด ติดตั้งทับได้ ชื่อ ทะเบียน และช่องจอดยังอยู่ครบ</dd>
+  </dl>
+
+  <h2>ข้อมูลที่แอปใช้</h2>
+  <ul>
+    <li>ภาพและวิดีโอเก็บในมือถือของคุณเท่านั้น (อัลบั้ม StampCamera) แอปไม่อัปโหลดภาพ</li>
+    <li>ภาพประทับชื่อ ตำแหน่ง ทะเบียนรถ วันเวลา และตำบล/อำเภอ · พิกัด GPS เก็บในข้อมูลของไฟล์ภาพ</li>
+    <li>ส่งขึ้นอินเทอร์เน็ตเฉพาะช่องจอด ทะเบียนรถ และเวลาเริ่มจอด ไปที่ผังช่องจอดที่ทีมเห็นร่วมกัน (ใครมีลิงก์ผังก็เปิดดูได้) · ไม่ส่งชื่อของคุณ</li>
+  </ul>
+  <p class="note">ติดตั้งไม่ได้ หรือแอปทำงานผิดปกติ ติดต่อผู้ดูแลแอป</p>
+
+  <p class="foot" id="foot">แอปกล้องลงเวลา · dev.suriyan.stampcam</p>
+</div>
+<script>
+// รุ่นล่าสุดอ่านจาก version.json ไฟล์เดียวกับที่แอปใช้เช็คอัปเดต (แก้ไฟล์นั้นที่เดียวตอนออกรุ่นใหม่)
+fetch("version.json", {cache: "no-cache"}).then(r => r.ok ? r.json() : Promise.reject(r.status)).then(v => {
+  document.getElementById("verName").textContent = `รุ่น ${v.versionName}`;
+  document.getElementById("verMeta").textContent = [v.size, v.date && new Date(v.date).toLocaleDateString("th-TH", {day: "numeric", month: "short", year: "numeric"})].filter(Boolean).join(" · ");
+  document.getElementById("verNotes").textContent = v.notes || "";
+  document.getElementById("apk").href = v.apk;
+}).catch(() => {});
+</script>
+</body>
+</html>

@@ -1,8 +1,8 @@
 {
-  "versionCode": 2,
-  "versionName": "1.1",
-  "date": "2026-10-22",
+  "versionCode": 3,
+  "versionName": "1.2",
+  "date": "2026-10-26",
   "size": "13 MB",
-  "apk": "https://github.com/snkanhakheaw-commits/jt-report/releases/download/stampcam-v1.1/stampcam-1.1.apk",
-  "notes": "เลือกช่องจอดแบบ คลัง → ด้าน → ช่อง และค้นหาเลขช่องได้ · เลือกช่องได้แม้ไม่มีเน็ต · ข้ามวันแอปถามว่ายังจอดช่องเดิมอยู่ไหม · หลายคนใช้รถคันเดียวกันได้ แอปตามช่องของรถให้เอง"
+  "apk": "https://github.com/snkanhakheaw-commits/jt-report/releases/download/stampcam-v1.2/stampcam-1.2.apk",
+  "notes": "ผังช่องจอดในแอปอัปเดตรหัสใหม่ คลังใหม่: B1 ย้ายไปด้านเหนือช่อง 43–44 · ด้านตะวันตก P1 = 11–12, P2 = 13–14, P3 = 15–16"
 }
